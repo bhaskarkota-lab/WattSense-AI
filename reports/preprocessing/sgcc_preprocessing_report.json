@@ -1,0 +1,15 @@
+{
+  "dataset": "SGCC Electricity Theft Detection",
+  "source_file": "C:\\Users\\pavan\\AppData\\Local\\Temp\\pytest-of-pavan\\pytest-39\\test_sgcc_preprocessing_with_m0\\sgcc_mock\\sgcc_mock_data.csv",
+  "processed_file": "data\\processed\\sgcc\\sgcc_clean.csv",
+  "total_customers": 2,
+  "total_days": 5,
+  "class_distribution": {
+    "0": 1,
+    "1": 1
+  },
+  "id_column_preserved": "cons_no",
+  "label_column": "FLAG",
+  "unit_note": "Daily consumption readings. Unit requires verification before comparing to kWh tariffs.",
+  "theft_separation_rule": "FLAG=1 is strictly an electricity theft benchmark. It is NEVER used as a general wastage label."
+}

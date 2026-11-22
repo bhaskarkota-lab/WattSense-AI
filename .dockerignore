@@ -1,0 +1,46 @@
+# Version control
+.git
+.gitignore
+
+# Environment & Sensitive Credentials
+.env
+.env.*
+!.env.production.example
+*.pem
+*.key
+*.secret
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+ENV/
+
+# Node & Frontend dependencies
+frontend/node_modules/
+frontend/dist/
+frontend/.npm/
+
+# Database files & Backups
+*.db
+*.sqlite
+*.sqlite3
+backups/
+database/backups/
+
+# Raw and large staging datasets (ML models are preserved in models/)
+data/uci_raw/
+data/sgcc_raw/
+data/raw/
+
+# OS and Editor metadata
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

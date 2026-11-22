@@ -1,0 +1,155 @@
+{
+  "created_at": "2026-11-21T21:04:51.683654+00:00",
+  "registry_version": "v2.0",
+  "champions": {
+    "1": {
+      "name": "RidgeRegression (V1)",
+      "version": "v1.0-forecasting",
+      "artifact": "models/consumption_forecasting/best_forecaster_h1.joblib",
+      "test_metrics": {
+        "MAE_Wh": 26.62,
+        "RMSE_Wh": 60.53,
+        "R2": 0.5573,
+        "sMAPE_pct": 22.11,
+        "WAPE_pct": 26.89,
+        "forecast_bias_Wh": 1.63
+      }
+    },
+    "6": {
+      "name": "ExtraTreesRegressor (V1)",
+      "version": "v1.0-forecasting",
+      "artifact": "models/consumption_forecasting/best_forecaster_h6.joblib",
+      "test_metrics": {
+        "MAE_Wh": 62.15,
+        "RMSE_Wh": 90.68,
+        "R2": 0.0064,
+        "sMAPE_pct": 47.98,
+        "WAPE_pct": 62.78,
+        "forecast_bias_Wh": -35.94
+      }
+    },
+    "144": {
+      "name": "TimeOfDayAverage (Baseline Champion)",
+      "version": "v1.0-baseline",
+      "artifact": "Non-Parametric Diurnal Profile",
+      "test_metrics": {
+        "MAE_Wh": 47.73,
+        "RMSE_Wh": 85.73,
+        "R2": 0.1105,
+        "sMAPE_pct": 38.55,
+        "WAPE_pct": 48.21,
+        "forecast_bias_Wh": -0.89
+      }
+    }
+  },
+  "challengers": {
+    "v2_ridge_h1": {
+      "model_id": "v2_ridge_h1",
+      "horizon_steps": 1,
+      "algorithm": "Ridge",
+      "registered_at": "2026-11-21T21:06:15.909000+00:00",
+      "artifact_path": "C:\\Users\\pavan\\Downloads\\Smart_Electricity_Wastage_Real_Data_Project\\Smart_Electricity_Wastage_Real_Data\\models\\v2\\v2_forecaster_h1_ridge.joblib",
+      "sha256": "dd205cf05f7a59f3e4f9da6f4e8af2dbb674601c704461c7578eb2a91976b9f5",
+      "feature_count": 55,
+      "training_samples": 13713,
+      "test_samples": 2939,
+      "hyperparameters": {
+        "horizon": 1,
+        "algorithm": "Ridge"
+      },
+      "test_metrics": {
+        "MAE_Wh": 31.5,
+        "RMSE_Wh": 60.93,
+        "R2": 0.5514,
+        "sMAPE_pct": 27.39,
+        "WAPE_pct": 32.47,
+        "forecast_bias_Wh": 8.75
+      },
+      "champion_metrics": {
+        "MAE_Wh": 26.62,
+        "RMSE_Wh": 60.53,
+        "R2": 0.5573,
+        "sMAPE_pct": 22.11,
+        "WAPE_pct": 26.89,
+        "forecast_bias_Wh": 1.63
+      },
+      "mae_delta_vs_champion": 4.88,
+      "r2_delta_vs_champion": -0.0059,
+      "comparison_verdict": "INSUFFICIENT_IMPROVEMENT",
+      "approval_status": "REJECTED_CHALLENGER",
+      "promoted_to_production": false
+    },
+    "v2_ridge_h6": {
+      "model_id": "v2_ridge_h6",
+      "horizon_steps": 6,
+      "algorithm": "Ridge",
+      "registered_at": "2026-11-21T21:06:25.455576+00:00",
+      "artifact_path": "C:\\Users\\pavan\\Downloads\\Smart_Electricity_Wastage_Real_Data_Project\\Smart_Electricity_Wastage_Real_Data\\models\\v2\\v2_forecaster_h6_ridge.joblib",
+      "sha256": "e882a21932c6b5a6a9668df6e314091a7738721fb76ee2b4f35e7226e3da1a8c",
+      "feature_count": 55,
+      "training_samples": 13709,
+      "test_samples": 2939,
+      "hyperparameters": {
+        "horizon": 6,
+        "algorithm": "Ridge"
+      },
+      "test_metrics": {
+        "MAE_Wh": 60.45,
+        "RMSE_Wh": 85.92,
+        "R2": 0.108,
+        "sMAPE_pct": 51.7,
+        "WAPE_pct": 62.3,
+        "forecast_bias_Wh": 28.7
+      },
+      "champion_metrics": {
+        "MAE_Wh": 62.15,
+        "RMSE_Wh": 90.68,
+        "R2": 0.0064,
+        "sMAPE_pct": 47.98,
+        "WAPE_pct": 62.78,
+        "forecast_bias_Wh": -35.94
+      },
+      "mae_delta_vs_champion": -1.7,
+      "r2_delta_vs_champion": 0.1016,
+      "comparison_verdict": "CHALLENGER_OUTPERFORMS_CHAMPION",
+      "approval_status": "RECOMMENDED_FOR_APPROVAL",
+      "promoted_to_production": false
+    },
+    "v2_ridge_h144": {
+      "model_id": "v2_ridge_h144",
+      "horizon_steps": 144,
+      "algorithm": "Ridge",
+      "registered_at": "2026-11-21T21:06:47.600472+00:00",
+      "artifact_path": "C:\\Users\\pavan\\Downloads\\Smart_Electricity_Wastage_Real_Data_Project\\Smart_Electricity_Wastage_Real_Data\\models\\v2\\v2_forecaster_h144_ridge.joblib",
+      "sha256": "82eb620d26f12d3faeae7ca97e3a277285631851d851a08b493824042efbd6c9",
+      "feature_count": 55,
+      "training_samples": 13612,
+      "test_samples": 2918,
+      "hyperparameters": {
+        "horizon": 144,
+        "algorithm": "Ridge"
+      },
+      "test_metrics": {
+        "MAE_Wh": 47.77,
+        "RMSE_Wh": 85.22,
+        "R2": 0.1211,
+        "sMAPE_pct": 45.31,
+        "WAPE_pct": 49.47,
+        "forecast_bias_Wh": -5.16
+      },
+      "champion_metrics": {
+        "MAE_Wh": 47.73,
+        "RMSE_Wh": 85.73,
+        "R2": 0.1105,
+        "sMAPE_pct": 38.55,
+        "WAPE_pct": 48.21,
+        "forecast_bias_Wh": -0.89
+      },
+      "mae_delta_vs_champion": 0.04,
+      "r2_delta_vs_champion": 0.0106,
+      "comparison_verdict": "INSUFFICIENT_IMPROVEMENT",
+      "approval_status": "REJECTED_CHALLENGER",
+      "promoted_to_production": false
+    }
+  }
+}

@@ -1,0 +1,584 @@
+{
+  "h1": {
+    "horizon_name": "10_minutes_ahead",
+    "steps": 1,
+    "best_model": "RidgeRegression",
+    "artifact_path": "C:\\Users\\pavan\\Downloads\\Smart_Electricity_Wastage_Real_Data_Project\\Smart_Electricity_Wastage_Real_Data\\models\\consumption_forecasting\\best_forecaster_h1.joblib",
+    "features_used": [
+      "Appliances",
+      "Press_mm_hg",
+      "RH_1",
+      "RH_2",
+      "RH_3",
+      "RH_4",
+      "RH_5",
+      "RH_6",
+      "RH_7",
+      "RH_8",
+      "RH_9",
+      "RH_out",
+      "T1",
+      "T2",
+      "T3",
+      "T4",
+      "T5",
+      "T6",
+      "T7",
+      "T8",
+      "T9",
+      "T_out",
+      "Tdewpoint",
+      "Visibility",
+      "Windspeed",
+      "appliances_lag_1",
+      "appliances_lag_144",
+      "appliances_lag_2",
+      "appliances_lag_3",
+      "appliances_lag_6",
+      "appliances_roll_mean_144",
+      "appliances_roll_mean_6",
+      "appliances_roll_std_6",
+      "dayofweek",
+      "dayofweek_cos",
+      "dayofweek_sin",
+      "hour",
+      "hour_cos",
+      "hour_sin",
+      "humidity_diff_indoor_outdoor",
+      "is_weekend",
+      "lights",
+      "month",
+      "temp_diff_indoor_outdoor"
+    ],
+    "n_features": 44,
+    "split_sizes": {
+      "train_range": [
+        0,
+        13712
+      ],
+      "val_range": [
+        13713,
+        16650
+      ],
+      "test_range": [
+        16651,
+        19589
+      ],
+      "n_train": 13713,
+      "n_val": 2938,
+      "n_test": 2939,
+      "total": 19590
+    },
+    "validation_metrics": {
+      "baselines": {
+        "LastObservation": {
+          "MAE_Wh": 25.79,
+          "RMSE_Wh": 65.51,
+          "R2": 0.4726,
+          "sMAPE_pct": 20.69,
+          "MAPE_pct": 22.65
+        },
+        "SeasonalNaive24h": {
+          "MAE_Wh": 51.91,
+          "RMSE_Wh": 112.69,
+          "R2": -0.5606,
+          "sMAPE_pct": 39.61,
+          "MAPE_pct": 53.33
+        },
+        "RollingAverage24h": {
+          "MAE_Wh": 49.71,
+          "RMSE_Wh": 89.79,
+          "R2": 0.0093,
+          "sMAPE_pct": 45.46,
+          "MAPE_pct": 58.73
+        },
+        "TimeOfDayAverage": {
+          "MAE_Wh": 47.81,
+          "RMSE_Wh": 85.23,
+          "R2": 0.1074,
+          "sMAPE_pct": 41.11,
+          "MAPE_pct": 54.45
+        }
+      },
+      "ml_models": {
+        "LinearRegression": {
+          "MAE_Wh": 26.98,
+          "RMSE_Wh": 59.24,
+          "R2": 0.5688,
+          "sMAPE_pct": 24.49,
+          "MAPE_pct": 27.82
+        },
+        "RidgeRegression": {
+          "MAE_Wh": 26.96,
+          "RMSE_Wh": 59.22,
+          "R2": 0.569,
+          "sMAPE_pct": 24.47,
+          "MAPE_pct": 27.81
+        },
+        "RandomForestRegressor": {
+          "MAE_Wh": 32.95,
+          "RMSE_Wh": 65.14,
+          "R2": 0.4785,
+          "sMAPE_pct": 26.16,
+          "MAPE_pct": 33.2
+        },
+        "ExtraTreesRegressor": {
+          "MAE_Wh": 26.98,
+          "RMSE_Wh": 57.77,
+          "R2": 0.5899,
+          "sMAPE_pct": 22.86,
+          "MAPE_pct": 26.83
+        },
+        "HistGradientBoostingRegressor": {
+          "MAE_Wh": 27.51,
+          "RMSE_Wh": 58.2,
+          "R2": 0.5838,
+          "sMAPE_pct": 23.25,
+          "MAPE_pct": 27.13
+        }
+      }
+    },
+    "test_metrics": {
+      "baselines": {
+        "LastObservation": {
+          "MAE_Wh": 26.72,
+          "RMSE_Wh": 66.79,
+          "R2": 0.4611,
+          "sMAPE_pct": 19.75,
+          "MAPE_pct": 21.51
+        },
+        "SeasonalNaive24h": {
+          "MAE_Wh": 52.49,
+          "RMSE_Wh": 109.21,
+          "R2": -0.441,
+          "sMAPE_pct": 37.58,
+          "MAPE_pct": 49.24
+        },
+        "RollingAverage24h": {
+          "MAE_Wh": 50.38,
+          "RMSE_Wh": 89.75,
+          "R2": 0.0268,
+          "sMAPE_pct": 43.12,
+          "MAPE_pct": 53.23
+        },
+        "TimeOfDayAverage": {
+          "MAE_Wh": 48.01,
+          "RMSE_Wh": 85.66,
+          "R2": 0.1134,
+          "sMAPE_pct": 38.68,
+          "MAPE_pct": 48.51
+        }
+      },
+      "selected_best_model": {
+        "model_name": "RidgeRegression",
+        "metrics": {
+          "MAE_Wh": 26.62,
+          "RMSE_Wh": 60.53,
+          "R2": 0.5573,
+          "sMAPE_pct": 22.11,
+          "MAPE_pct": 23.8
+        }
+      }
+    },
+    "residual_summary": {
+      "mean_residual": 1.63,
+      "std_residual": 60.51,
+      "min_residual": -251.44,
+      "max_residual": 518.61,
+      "skewness": 3.613
+    },
+    "tier_mae": {
+      "high_peak_p90_mae": 123.94,
+      "low_standby_p50_mae": 11.94,
+      "p90_cutoff_Wh": 160.0
+    }
+  },
+  "h6": {
+    "horizon_name": "1_hour_ahead",
+    "steps": 6,
+    "best_model": "ExtraTreesRegressor",
+    "artifact_path": "C:\\Users\\pavan\\Downloads\\Smart_Electricity_Wastage_Real_Data_Project\\Smart_Electricity_Wastage_Real_Data\\models\\consumption_forecasting\\best_forecaster_h6.joblib",
+    "features_used": [
+      "Appliances",
+      "Press_mm_hg",
+      "RH_1",
+      "RH_2",
+      "RH_3",
+      "RH_4",
+      "RH_5",
+      "RH_6",
+      "RH_7",
+      "RH_8",
+      "RH_9",
+      "RH_out",
+      "T1",
+      "T2",
+      "T3",
+      "T4",
+      "T5",
+      "T6",
+      "T7",
+      "T8",
+      "T9",
+      "T_out",
+      "Tdewpoint",
+      "Visibility",
+      "Windspeed",
+      "appliances_lag_1",
+      "appliances_lag_144",
+      "appliances_lag_2",
+      "appliances_lag_3",
+      "appliances_lag_6",
+      "appliances_roll_mean_144",
+      "appliances_roll_mean_6",
+      "appliances_roll_std_6",
+      "dayofweek",
+      "dayofweek_cos",
+      "dayofweek_sin",
+      "hour",
+      "hour_cos",
+      "hour_sin",
+      "humidity_diff_indoor_outdoor",
+      "is_weekend",
+      "lights",
+      "month",
+      "temp_diff_indoor_outdoor"
+    ],
+    "n_features": 44,
+    "split_sizes": {
+      "train_range": [
+        0,
+        13708
+      ],
+      "val_range": [
+        13709,
+        16645
+      ],
+      "test_range": [
+        16646,
+        19584
+      ],
+      "n_train": 13709,
+      "n_val": 2937,
+      "n_test": 2939,
+      "total": 19585
+    },
+    "validation_metrics": {
+      "baselines": {
+        "LastObservation": {
+          "MAE_Wh": 50.55,
+          "RMSE_Wh": 109.42,
+          "R2": -0.471,
+          "sMAPE_pct": 37.26,
+          "MAPE_pct": 47.55
+        },
+        "SeasonalNaive24h": {
+          "MAE_Wh": 51.75,
+          "RMSE_Wh": 112.08,
+          "R2": -0.5433,
+          "sMAPE_pct": 39.44,
+          "MAPE_pct": 54.05
+        },
+        "RollingAverage24h": {
+          "MAE_Wh": 50.42,
+          "RMSE_Wh": 90.6,
+          "R2": -0.0084,
+          "sMAPE_pct": 46.11,
+          "MAPE_pct": 59.55
+        },
+        "TimeOfDayAverage": {
+          "MAE_Wh": 47.82,
+          "RMSE_Wh": 85.24,
+          "R2": 0.1073,
+          "sMAPE_pct": 41.11,
+          "MAPE_pct": 54.45
+        }
+      },
+      "ml_models": {
+        "LinearRegression": {
+          "MAE_Wh": 46.11,
+          "RMSE_Wh": 83.06,
+          "R2": 0.1524,
+          "sMAPE_pct": 40.31,
+          "MAPE_pct": 52.59
+        },
+        "RidgeRegression": {
+          "MAE_Wh": 45.87,
+          "RMSE_Wh": 82.99,
+          "R2": 0.1538,
+          "sMAPE_pct": 40.14,
+          "MAPE_pct": 52.18
+        },
+        "RandomForestRegressor": {
+          "MAE_Wh": 57.26,
+          "RMSE_Wh": 95.99,
+          "R2": -0.132,
+          "sMAPE_pct": 43.33,
+          "MAPE_pct": 67.17
+        },
+        "ExtraTreesRegressor": {
+          "MAE_Wh": 45.57,
+          "RMSE_Wh": 82.47,
+          "R2": 0.1645,
+          "sMAPE_pct": 36.95,
+          "MAPE_pct": 50.12
+        },
+        "HistGradientBoostingRegressor": {
+          "MAE_Wh": 54.01,
+          "RMSE_Wh": 91.03,
+          "R2": -0.018,
+          "sMAPE_pct": 42.87,
+          "MAPE_pct": 60.92
+        }
+      }
+    },
+    "test_metrics": {
+      "baselines": {
+        "LastObservation": {
+          "MAE_Wh": 46.38,
+          "RMSE_Wh": 101.81,
+          "R2": -0.2524,
+          "sMAPE_pct": 31.02,
+          "MAPE_pct": 38.24
+        },
+        "SeasonalNaive24h": {
+          "MAE_Wh": 52.6,
+          "RMSE_Wh": 109.63,
+          "R2": -0.4522,
+          "sMAPE_pct": 37.57,
+          "MAPE_pct": 48.76
+        },
+        "RollingAverage24h": {
+          "MAE_Wh": 51.39,
+          "RMSE_Wh": 90.85,
+          "R2": 0.0028,
+          "sMAPE_pct": 43.98,
+          "MAPE_pct": 54.37
+        },
+        "TimeOfDayAverage": {
+          "MAE_Wh": 48.01,
+          "RMSE_Wh": 85.66,
+          "R2": 0.1134,
+          "sMAPE_pct": 38.68,
+          "MAPE_pct": 48.51
+        }
+      },
+      "selected_best_model": {
+        "model_name": "ExtraTreesRegressor",
+        "metrics": {
+          "MAE_Wh": 62.15,
+          "RMSE_Wh": 90.68,
+          "R2": 0.0064,
+          "sMAPE_pct": 47.98,
+          "MAPE_pct": 74.73
+        }
+      }
+    },
+    "residual_summary": {
+      "mean_residual": -35.94,
+      "std_residual": 83.26,
+      "min_residual": -275.91,
+      "max_residual": 729.96,
+      "skewness": 2.257
+    },
+    "tier_mae": {
+      "high_peak_p90_mae": 128.4,
+      "low_standby_p50_mae": 41.89,
+      "p90_cutoff_Wh": 160.0
+    }
+  },
+  "h144": {
+    "horizon_name": "24_hours_ahead",
+    "steps": 144,
+    "best_model": "ExtraTreesRegressor",
+    "artifact_path": "C:\\Users\\pavan\\Downloads\\Smart_Electricity_Wastage_Real_Data_Project\\Smart_Electricity_Wastage_Real_Data\\models\\consumption_forecasting\\best_forecaster_h144.joblib",
+    "features_used": [
+      "Appliances",
+      "Press_mm_hg",
+      "RH_1",
+      "RH_2",
+      "RH_3",
+      "RH_4",
+      "RH_5",
+      "RH_6",
+      "RH_7",
+      "RH_8",
+      "RH_9",
+      "RH_out",
+      "T1",
+      "T2",
+      "T3",
+      "T4",
+      "T5",
+      "T6",
+      "T7",
+      "T8",
+      "T9",
+      "T_out",
+      "Tdewpoint",
+      "Visibility",
+      "Windspeed",
+      "appliances_lag_1",
+      "appliances_lag_144",
+      "appliances_lag_2",
+      "appliances_lag_3",
+      "appliances_lag_6",
+      "appliances_roll_mean_144",
+      "appliances_roll_mean_6",
+      "appliances_roll_std_6",
+      "dayofweek",
+      "dayofweek_cos",
+      "dayofweek_sin",
+      "hour",
+      "hour_cos",
+      "hour_sin",
+      "humidity_diff_indoor_outdoor",
+      "is_weekend",
+      "lights",
+      "month",
+      "temp_diff_indoor_outdoor"
+    ],
+    "n_features": 44,
+    "split_sizes": {
+      "train_range": [
+        0,
+        13611
+      ],
+      "val_range": [
+        13612,
+        16528
+      ],
+      "test_range": [
+        16529,
+        19446
+      ],
+      "n_train": 13612,
+      "n_val": 2917,
+      "n_test": 2918,
+      "total": 19447
+    },
+    "validation_metrics": {
+      "baselines": {
+        "LastObservation": {
+          "MAE_Wh": 53.55,
+          "RMSE_Wh": 114.76,
+          "R2": -0.5967,
+          "sMAPE_pct": 39.61,
+          "MAPE_pct": 55.04
+        },
+        "SeasonalNaive24h": {
+          "MAE_Wh": 53.55,
+          "RMSE_Wh": 114.76,
+          "R2": -0.5967,
+          "sMAPE_pct": 39.61,
+          "MAPE_pct": 55.04
+        },
+        "RollingAverage24h": {
+          "MAE_Wh": 54.78,
+          "RMSE_Wh": 94.27,
+          "R2": -0.0773,
+          "sMAPE_pct": 49.25,
+          "MAPE_pct": 65.08
+        },
+        "TimeOfDayAverage": {
+          "MAE_Wh": 48.3,
+          "RMSE_Wh": 85.83,
+          "R2": 0.1069,
+          "sMAPE_pct": 41.33,
+          "MAPE_pct": 54.44
+        }
+      },
+      "ml_models": {
+        "LinearRegression": {
+          "MAE_Wh": 53.56,
+          "RMSE_Wh": 92.29,
+          "R2": -0.0324,
+          "sMAPE_pct": 49.64,
+          "MAPE_pct": 61.04
+        },
+        "RidgeRegression": {
+          "MAE_Wh": 52.88,
+          "RMSE_Wh": 91.57,
+          "R2": -0.0165,
+          "sMAPE_pct": 48.34,
+          "MAPE_pct": 60.31
+        },
+        "RandomForestRegressor": {
+          "MAE_Wh": 50.18,
+          "RMSE_Wh": 87.85,
+          "R2": 0.0644,
+          "sMAPE_pct": 42.48,
+          "MAPE_pct": 57.05
+        },
+        "ExtraTreesRegressor": {
+          "MAE_Wh": 47.06,
+          "RMSE_Wh": 83.93,
+          "R2": 0.146,
+          "sMAPE_pct": 39.93,
+          "MAPE_pct": 52.88
+        },
+        "HistGradientBoostingRegressor": {
+          "MAE_Wh": 50.1,
+          "RMSE_Wh": 89.48,
+          "R2": 0.0293,
+          "sMAPE_pct": 41.83,
+          "MAPE_pct": 55.4
+        }
+      }
+    },
+    "test_metrics": {
+      "baselines": {
+        "LastObservation": {
+          "MAE_Wh": 52.23,
+          "RMSE_Wh": 109.26,
+          "R2": -0.4448,
+          "sMAPE_pct": 37.08,
+          "MAPE_pct": 48.92
+        },
+        "SeasonalNaive24h": {
+          "MAE_Wh": 52.23,
+          "RMSE_Wh": 109.26,
+          "R2": -0.4448,
+          "sMAPE_pct": 37.08,
+          "MAPE_pct": 48.92
+        },
+        "RollingAverage24h": {
+          "MAE_Wh": 53.15,
+          "RMSE_Wh": 95.75,
+          "R2": -0.1095,
+          "sMAPE_pct": 45.41,
+          "MAPE_pct": 55.54
+        },
+        "TimeOfDayAverage": {
+          "MAE_Wh": 47.73,
+          "RMSE_Wh": 85.73,
+          "R2": 0.1105,
+          "sMAPE_pct": 38.55,
+          "MAPE_pct": 48.25
+        }
+      },
+      "selected_best_model": {
+        "model_name": "ExtraTreesRegressor",
+        "metrics": {
+          "MAE_Wh": 71.03,
+          "RMSE_Wh": 103.8,
+          "R2": -0.304,
+          "sMAPE_pct": 50.72,
+          "MAPE_pct": 85.43
+        }
+      }
+    },
+    "residual_summary": {
+      "mean_residual": -42.59,
+      "std_residual": 94.66,
+      "min_residual": -263.26,
+      "max_residual": 698.45,
+      "skewness": 1.762
+    },
+    "tier_mae": {
+      "high_peak_p90_mae": 139.07,
+      "low_standby_p50_mae": 46.02,
+      "p90_cutoff_Wh": 160.0
+    }
+  }
+}

@@ -1,0 +1,65 @@
+# Environments and Secrets
+.env
+.env.*
+*.env
+!.env.example
+!.env.production.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.venv/
+env/
+venv/
+ENV/
+
+# Database files & backups
+*.db
+*.sqlite
+*.sqlite3
+*.sql
+*.dump
+electricity_wastage_dev.db
+database/backups/
+backups/
+
+# Frontend
+node_modules/
+dist/
+frontend/node_modules/
+frontend/dist/
+.npm
+.vite/
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+
+# IDE & OS
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db

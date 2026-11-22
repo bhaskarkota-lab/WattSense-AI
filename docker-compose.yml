@@ -1,0 +1,79 @@
+version: '3.8'
+
+# ==============================================================================
+# WattSense AI™ — Local Production Simulation & Orchestration
+# ==============================================================================
+
+services:
+  # ----------------------------------------------------------------------------
+  # PostgreSQL 18 Production Database Service
+  # ----------------------------------------------------------------------------
+  db:
+    image: postgres:18-alpine
+    container_name: wattsense_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: electricity_wastage_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-dev_pg_password_change_in_prod}
+    expose:
+      # Exposed internally to wattsense_network only; NOT published to host to guarantee network isolation
+      - "5432"
+    volumes:
+      # PostgreSQL 18+ requires mounting /var/lib/postgresql rather than /var/lib/postgresql/data
+      - postgres_data:/var/lib/postgresql
+      - ./database/backups/postgres_backups/electricity_wastage_db_backup_20261121_171824.sql:/docker-entrypoint-initdb.d/01_init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d electricity_wastage_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - wattsense_network
+
+  # ----------------------------------------------------------------------------
+  # FastAPI Application Backend & Integrated Frontend
+  # ----------------------------------------------------------------------------
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: wattsense_app
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      ENVIRONMENT: production
+      DATABASE_URL: postgresql+psycopg2://postgres:${POSTGRES_PASSWORD:-dev_pg_password_change_in_prod}@db:5432/electricity_wastage_db
+      ALLOW_SQLITE_FALLBACK: "False"
+      SECRET_KEY: ${PROD_SECRET_KEY:-c8f39a0e41b27d5e683491f0a25b7e9c3d4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b}
+      ADMIN_SECRET_KEY: ${ADMIN_SECRET_KEY:-7f4b8c91a3e62057b2d4f8019c5e3a7268d01b4e9f2a5c8360d7e4b192837465}
+      ACCESS_TOKEN_EXPIRE_MINUTES: 60
+      ENFORCE_DEMO_MODE: "True"
+      ALLOWED_CORS_ORIGINS: '["http://localhost:8000","http://127.0.0.1:8000"]'
+      DB_POOL_SIZE: 10
+      DB_MAX_OVERFLOW: 20
+      DB_POOL_TIMEOUT: 30
+      DB_POOL_RECYCLE: 1800
+      DB_CONNECT_TIMEOUT: 5
+    ports:
+      - "127.0.0.1:8000:8000"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 20s
+      timeout: 5s
+      retries: 3
+    networks:
+      - wattsense_network
+
+# ------------------------------------------------------------------------------
+# Persistent Storage Volumes & Networks
+# ------------------------------------------------------------------------------
+volumes:
+  postgres_data:
+    driver: local
+
+networks:
+  wattsense_network:
+    driver: bridge

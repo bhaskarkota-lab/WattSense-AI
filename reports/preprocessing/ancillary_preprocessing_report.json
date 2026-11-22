@@ -1,0 +1,14 @@
+{
+  "dataset": "Ancillary Sub-metering Dataset",
+  "file_path": "C:\\Users\\pavan\\Downloads\\electricity_dataset.csv",
+  "rows": 10,
+  "columns": [
+    "Lighting",
+    "Chiller",
+    "Cooling_Tower"
+  ],
+  "missing_values": 0,
+  "sampling_interval": "Undefined (No timestamp index)",
+  "measurement_units": "Unlabelled numeric sub-metering (kW / Watts)",
+  "cross_dataset_policy": "DO NOT MERGE: Incompatible with UCI (Wh, 10-min time series) and SGCC (daily customer matrix). Can be used strictly for standalone sub-meter component demonstration."
+}

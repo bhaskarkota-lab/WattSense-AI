@@ -1,0 +1,451 @@
+{
+  "execution_timestamp": "2026-11-22T02:36:54.093724",
+  "dataset_rows": 19591,
+  "feature_count": 55,
+  "horizon_benchmarks": {
+    "1": {
+      "horizon_name": "10_minutes_ahead",
+      "steps": 1,
+      "baselines": {
+        "Persistence": {
+          "MAE_Wh": 26.72,
+          "RMSE_Wh": 66.79,
+          "R2": 0.4611,
+          "sMAPE_pct": 19.75,
+          "WAPE_pct": 27.54,
+          "forecast_bias_Wh": -0.12
+        },
+        "TimeOfDay": {
+          "MAE_Wh": 48.01,
+          "RMSE_Wh": 85.66,
+          "R2": 0.1134,
+          "sMAPE_pct": 38.68,
+          "WAPE_pct": 49.47,
+          "forecast_bias_Wh": 2.35
+        },
+        "Rolling24h": {
+          "MAE_Wh": 50.38,
+          "RMSE_Wh": 89.75,
+          "R2": 0.0268,
+          "sMAPE_pct": 43.12,
+          "WAPE_pct": 51.92,
+          "forecast_bias_Wh": -0.56
+        },
+        "SeasonalNaive24h": {
+          "MAE_Wh": 52.49,
+          "RMSE_Wh": 109.21,
+          "R2": -0.441,
+          "sMAPE_pct": 37.58,
+          "WAPE_pct": 54.1,
+          "forecast_bias_Wh": -2.1
+        }
+      },
+      "candidates": {
+        "Ridge": {
+          "MAE_Wh": 31.5,
+          "RMSE_Wh": 60.93,
+          "R2": 0.5514,
+          "sMAPE_pct": 27.39,
+          "WAPE_pct": 32.47,
+          "forecast_bias_Wh": 8.75
+        },
+        "LightGBM": {
+          "MAE_Wh": 42.11,
+          "RMSE_Wh": 68.69,
+          "R2": 0.43,
+          "sMAPE_pct": 33.88,
+          "WAPE_pct": 43.4,
+          "forecast_bias_Wh": 25.23
+        },
+        "XGBoost": {
+          "MAE_Wh": 65.7,
+          "RMSE_Wh": 91.73,
+          "R2": -0.0167,
+          "sMAPE_pct": 50.36,
+          "WAPE_pct": 67.71,
+          "forecast_bias_Wh": 52.5
+        },
+        "CatBoost": {
+          "MAE_Wh": 45.92,
+          "RMSE_Wh": 66.58,
+          "R2": 0.4644,
+          "sMAPE_pct": 41.19,
+          "WAPE_pct": 47.33,
+          "forecast_bias_Wh": 30.34
+        }
+      },
+      "best_candidate": "Ridge",
+      "best_metrics": {
+        "MAE_Wh": 31.5,
+        "RMSE_Wh": 60.93,
+        "R2": 0.5514,
+        "sMAPE_pct": 27.39,
+        "WAPE_pct": 32.47,
+        "forecast_bias_Wh": 8.75
+      },
+      "conformal_intervals": {
+        "coverage_pct": 89.25,
+        "mean_interval_width_Wh": 104.0
+      },
+      "quantile_intervals": {
+        "coverage_pct": 84.04,
+        "mean_interval_width_Wh": 87.92
+      },
+      "registry_record": {
+        "model_id": "v2_ridge_h1",
+        "horizon_steps": 1,
+        "algorithm": "Ridge",
+        "registered_at": "2026-11-21T21:06:15.909000+00:00",
+        "artifact_path": "C:\\Users\\pavan\\Downloads\\Smart_Electricity_Wastage_Real_Data_Project\\Smart_Electricity_Wastage_Real_Data\\models\\v2\\v2_forecaster_h1_ridge.joblib",
+        "sha256": "dd205cf05f7a59f3e4f9da6f4e8af2dbb674601c704461c7578eb2a91976b9f5",
+        "feature_count": 55,
+        "training_samples": 13713,
+        "test_samples": 2939,
+        "hyperparameters": {
+          "horizon": 1,
+          "algorithm": "Ridge"
+        },
+        "test_metrics": {
+          "MAE_Wh": 31.5,
+          "RMSE_Wh": 60.93,
+          "R2": 0.5514,
+          "sMAPE_pct": 27.39,
+          "WAPE_pct": 32.47,
+          "forecast_bias_Wh": 8.75
+        },
+        "champion_metrics": {
+          "MAE_Wh": 26.62,
+          "RMSE_Wh": 60.53,
+          "R2": 0.5573,
+          "sMAPE_pct": 22.11,
+          "WAPE_pct": 26.89,
+          "forecast_bias_Wh": 1.63
+        },
+        "mae_delta_vs_champion": 4.88,
+        "r2_delta_vs_champion": -0.0059,
+        "comparison_verdict": "INSUFFICIENT_IMPROVEMENT",
+        "approval_status": "REJECTED_CHALLENGER",
+        "promoted_to_production": false
+      }
+    },
+    "6": {
+      "horizon_name": "1_hour_ahead",
+      "steps": 6,
+      "baselines": {
+        "Persistence": {
+          "MAE_Wh": 46.38,
+          "RMSE_Wh": 101.81,
+          "R2": -0.2524,
+          "sMAPE_pct": 31.02,
+          "WAPE_pct": 47.79,
+          "forecast_bias_Wh": -0.15
+        },
+        "TimeOfDay": {
+          "MAE_Wh": 48.01,
+          "RMSE_Wh": 85.66,
+          "R2": 0.1134,
+          "sMAPE_pct": 38.68,
+          "WAPE_pct": 49.47,
+          "forecast_bias_Wh": 2.35
+        },
+        "Rolling24h": {
+          "MAE_Wh": 51.39,
+          "RMSE_Wh": 90.85,
+          "R2": 0.0028,
+          "sMAPE_pct": 43.98,
+          "WAPE_pct": 52.96,
+          "forecast_bias_Wh": -0.24
+        },
+        "SeasonalNaive24h": {
+          "MAE_Wh": 52.6,
+          "RMSE_Wh": 109.63,
+          "R2": -0.4522,
+          "sMAPE_pct": 37.57,
+          "WAPE_pct": 54.21,
+          "forecast_bias_Wh": -3.36
+        }
+      },
+      "candidates": {
+        "Ridge": {
+          "MAE_Wh": 60.45,
+          "RMSE_Wh": 85.92,
+          "R2": 0.108,
+          "sMAPE_pct": 51.7,
+          "WAPE_pct": 62.3,
+          "forecast_bias_Wh": 28.7
+        },
+        "LightGBM": {
+          "MAE_Wh": 82.54,
+          "RMSE_Wh": 109.62,
+          "R2": -0.4518,
+          "sMAPE_pct": 59.99,
+          "WAPE_pct": 85.07,
+          "forecast_bias_Wh": 59.01
+        },
+        "XGBoost": {
+          "MAE_Wh": 129.34,
+          "RMSE_Wh": 162.96,
+          "R2": -2.2086,
+          "sMAPE_pct": 80.84,
+          "WAPE_pct": 133.29,
+          "forecast_bias_Wh": 112.03
+        },
+        "CatBoost": {
+          "MAE_Wh": 81.79,
+          "RMSE_Wh": 102.92,
+          "R2": -0.2799,
+          "sMAPE_pct": 63.28,
+          "WAPE_pct": 84.29,
+          "forecast_bias_Wh": 57.91
+        }
+      },
+      "best_candidate": "Ridge",
+      "best_metrics": {
+        "MAE_Wh": 60.45,
+        "RMSE_Wh": 85.92,
+        "R2": 0.108,
+        "sMAPE_pct": 51.7,
+        "WAPE_pct": 62.3,
+        "forecast_bias_Wh": 28.7
+      },
+      "conformal_intervals": {
+        "coverage_pct": 88.36,
+        "mean_interval_width_Wh": 199.61
+      },
+      "quantile_intervals": {
+        "coverage_pct": 81.35,
+        "mean_interval_width_Wh": 163.01
+      },
+      "registry_record": {
+        "model_id": "v2_ridge_h6",
+        "horizon_steps": 6,
+        "algorithm": "Ridge",
+        "registered_at": "2026-11-21T21:06:25.455576+00:00",
+        "artifact_path": "C:\\Users\\pavan\\Downloads\\Smart_Electricity_Wastage_Real_Data_Project\\Smart_Electricity_Wastage_Real_Data\\models\\v2\\v2_forecaster_h6_ridge.joblib",
+        "sha256": "e882a21932c6b5a6a9668df6e314091a7738721fb76ee2b4f35e7226e3da1a8c",
+        "feature_count": 55,
+        "training_samples": 13709,
+        "test_samples": 2939,
+        "hyperparameters": {
+          "horizon": 6,
+          "algorithm": "Ridge"
+        },
+        "test_metrics": {
+          "MAE_Wh": 60.45,
+          "RMSE_Wh": 85.92,
+          "R2": 0.108,
+          "sMAPE_pct": 51.7,
+          "WAPE_pct": 62.3,
+          "forecast_bias_Wh": 28.7
+        },
+        "champion_metrics": {
+          "MAE_Wh": 62.15,
+          "RMSE_Wh": 90.68,
+          "R2": 0.0064,
+          "sMAPE_pct": 47.98,
+          "WAPE_pct": 62.78,
+          "forecast_bias_Wh": -35.94
+        },
+        "mae_delta_vs_champion": -1.7,
+        "r2_delta_vs_champion": 0.1016,
+        "comparison_verdict": "CHALLENGER_OUTPERFORMS_CHAMPION",
+        "approval_status": "RECOMMENDED_FOR_APPROVAL",
+        "promoted_to_production": false
+      }
+    },
+    "144": {
+      "horizon_name": "24_hours_ahead",
+      "steps": 144,
+      "baselines": {
+        "Persistence": {
+          "MAE_Wh": 52.23,
+          "RMSE_Wh": 109.26,
+          "R2": -0.4448,
+          "sMAPE_pct": 37.08,
+          "WAPE_pct": 54.09,
+          "forecast_bias_Wh": -1.63
+        },
+        "TimeOfDay": {
+          "MAE_Wh": 47.73,
+          "RMSE_Wh": 85.73,
+          "R2": 0.1105,
+          "sMAPE_pct": 38.55,
+          "WAPE_pct": 49.43,
+          "forecast_bias_Wh": 2.29
+        },
+        "Rolling24h": {
+          "MAE_Wh": 53.15,
+          "RMSE_Wh": 95.75,
+          "R2": -0.1095,
+          "sMAPE_pct": 45.41,
+          "WAPE_pct": 55.04,
+          "forecast_bias_Wh": -2.99
+        },
+        "SeasonalNaive24h": {
+          "MAE_Wh": 52.23,
+          "RMSE_Wh": 109.26,
+          "R2": -0.4448,
+          "sMAPE_pct": 37.08,
+          "WAPE_pct": 54.09,
+          "forecast_bias_Wh": -1.63
+        }
+      },
+      "candidates": {
+        "Ridge": {
+          "MAE_Wh": 47.77,
+          "RMSE_Wh": 85.22,
+          "R2": 0.1211,
+          "sMAPE_pct": 45.31,
+          "WAPE_pct": 49.47,
+          "forecast_bias_Wh": -5.16
+        },
+        "LightGBM": {
+          "MAE_Wh": 77.48,
+          "RMSE_Wh": 111.34,
+          "R2": -0.5002,
+          "sMAPE_pct": 56.44,
+          "WAPE_pct": 80.24,
+          "forecast_bias_Wh": 45.93
+        },
+        "XGBoost": {
+          "MAE_Wh": 143.89,
+          "RMSE_Wh": 170.73,
+          "R2": -2.5277,
+          "sMAPE_pct": 88.9,
+          "WAPE_pct": 149.02,
+          "forecast_bias_Wh": 124.87
+        },
+        "CatBoost": {
+          "MAE_Wh": 87.34,
+          "RMSE_Wh": 112.67,
+          "R2": -0.5363,
+          "sMAPE_pct": 65.67,
+          "WAPE_pct": 90.45,
+          "forecast_bias_Wh": 58.67
+        }
+      },
+      "best_candidate": "Ridge",
+      "best_metrics": {
+        "MAE_Wh": 47.77,
+        "RMSE_Wh": 85.22,
+        "R2": 0.1211,
+        "sMAPE_pct": 45.31,
+        "WAPE_pct": 49.47,
+        "forecast_bias_Wh": -5.16
+      },
+      "conformal_intervals": {
+        "coverage_pct": 91.57,
+        "mean_interval_width_Wh": 191.49
+      },
+      "quantile_intervals": {
+        "coverage_pct": 74.3,
+        "mean_interval_width_Wh": 174.83
+      },
+      "registry_record": {
+        "model_id": "v2_ridge_h144",
+        "horizon_steps": 144,
+        "algorithm": "Ridge",
+        "registered_at": "2026-11-21T21:06:47.600472+00:00",
+        "artifact_path": "C:\\Users\\pavan\\Downloads\\Smart_Electricity_Wastage_Real_Data_Project\\Smart_Electricity_Wastage_Real_Data\\models\\v2\\v2_forecaster_h144_ridge.joblib",
+        "sha256": "82eb620d26f12d3faeae7ca97e3a277285631851d851a08b493824042efbd6c9",
+        "feature_count": 55,
+        "training_samples": 13612,
+        "test_samples": 2918,
+        "hyperparameters": {
+          "horizon": 144,
+          "algorithm": "Ridge"
+        },
+        "test_metrics": {
+          "MAE_Wh": 47.77,
+          "RMSE_Wh": 85.22,
+          "R2": 0.1211,
+          "sMAPE_pct": 45.31,
+          "WAPE_pct": 49.47,
+          "forecast_bias_Wh": -5.16
+        },
+        "champion_metrics": {
+          "MAE_Wh": 47.73,
+          "RMSE_Wh": 85.73,
+          "R2": 0.1105,
+          "sMAPE_pct": 38.55,
+          "WAPE_pct": 48.21,
+          "forecast_bias_Wh": -0.89
+        },
+        "mae_delta_vs_champion": 0.04,
+        "r2_delta_vs_champion": 0.0106,
+        "comparison_verdict": "INSUFFICIENT_IMPROVEMENT",
+        "approval_status": "REJECTED_CHALLENGER",
+        "promoted_to_production": false
+      }
+    }
+  },
+  "anomaly_detection": {
+    "total_candidates": 1326,
+    "suppressed_bursts": 115,
+    "sustained_events": 80,
+    "total_excess_Wh": 28560.0
+  },
+  "drift_audit": {
+    "status": "SIGNIFICANT_DRIFT",
+    "drifted_count": 48,
+    "drifted_features": [
+      "Appliances",
+      "Press_mm_hg",
+      "RH_1",
+      "RH_2",
+      "RH_3",
+      "RH_4",
+      "RH_5",
+      "RH_6",
+      "RH_7",
+      "RH_8",
+      "RH_9",
+      "RH_out",
+      "T1",
+      "T2",
+      "T3",
+      "T4",
+      "T5",
+      "T6",
+      "T7",
+      "T8",
+      "T9",
+      "T_out",
+      "Tdewpoint",
+      "Visibility",
+      "Windspeed",
+      "appliances_ewma_12",
+      "appliances_lag_1",
+      "appliances_lag_12",
+      "appliances_lag_144",
+      "appliances_lag_2",
+      "appliances_lag_24",
+      "appliances_lag_3",
+      "appliances_lag_6",
+      "appliances_roll_mean_12",
+      "appliances_roll_mean_144",
+      "appliances_roll_mean_6",
+      "appliances_roll_median_144",
+      "appliances_roll_median_6",
+      "appliances_roll_p10_144",
+      "appliances_roll_p90_144",
+      "appliances_roll_std_144",
+      "appliances_roll_std_6",
+      "humidity_diff_indoor_outdoor",
+      "lights",
+      "month",
+      "month_cos",
+      "month_sin",
+      "temp_diff_indoor_outdoor"
+    ]
+  },
+  "deep_learning_benchmark": {
+    "dataset_rows": 19591,
+    "dataset_series_count": 1,
+    "tft_recommended_series": 50,
+    "tft_recommended_samples": 100000,
+    "data_sufficiency_verdict": "INSUFFICIENT_FOR_STABLE_DEEP_TRAINING",
+    "scientific_rationale": "The empirical UCI dataset represents a single household (1=1 series, 19,591 rows). Architectures such as Temporal Fusion Transformer (TFT) with cross-entity attention and PatchTST require hundreds of diverse time-series cross-sections to avoid severe parameter over-fitting. On single-dwelling 10-minute series, tabular gradient boosting (LightGBM/XGBoost/CatBoost) and diurnal non-parametric baselines consistently outperform over-parameterized deep neural networks.",
+    "status": "EXPERIMENTAL_BENCHMARK_ONLY"
+  }
+}
