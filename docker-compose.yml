@@ -47,8 +47,8 @@ services:
       ENVIRONMENT: production
       DATABASE_URL: postgresql+psycopg2://postgres:${POSTGRES_PASSWORD:-dev_pg_password_change_in_prod}@db:5432/electricity_wastage_db
       ALLOW_SQLITE_FALLBACK: "False"
-      SECRET_KEY: ${PROD_SECRET_KEY:-c8f39a0e41b27d5e683491f0a25b7e9c3d4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b}
-      ADMIN_SECRET_KEY: ${ADMIN_SECRET_KEY:-7f4b8c91a3e62057b2d4f8019c5e3a7268d01b4e9f2a5c8360d7e4b192837465}
+      SECRET_KEY: ${PROD_SECRET_KEY:-replace_with_your_own_secure_random_secret}
+      ADMIN_SECRET_KEY: ${ADMIN_SECRET_KEY:-replace_with_your_own_secure_random_secret}
       ACCESS_TOKEN_EXPIRE_MINUTES: 60
       ENFORCE_DEMO_MODE: "True"
       ALLOWED_CORS_ORIGINS: '["http://localhost:8000","http://127.0.0.1:8000"]'

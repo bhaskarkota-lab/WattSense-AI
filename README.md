@@ -299,8 +299,8 @@ Ensure `.env` contains valid credentials:
 ```ini
 ENVIRONMENT=development
 DATABASE_URL=postgresql+psycopg2://postgres:your_password@localhost:5432/electricity_wastage_db
-ADMIN_SECRET_KEY=watt-sec-feb85d9dfed1c226718c3a9db345adc1aa33bd36
-SECRET_KEY=c8f39a0e41b27d5e683491f0a25b7e9c3d4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b
+ADMIN_SECRET_KEY=replace_with_your_own_secure_random_secret
+SECRET_KEY=replace_with_your_own_secure_random_secret
 ```
 
 ### Step 4: Run Migrations & Start Local Server
